@@ -10,10 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
-public class UserService {
+public class UserService implements UserServiceInterface {
     @Autowired
     private UserRepo userRepo;
     @Autowired
@@ -23,9 +24,29 @@ public class UserService {
         return userDTO;
     }
 
+    @Override
+    public User findUserByEmail(String email) {
+        return userRepo.findByEmail(email);
+    }
+
     public List<UserDTO>  getAllUsers(){
         List<User>userList=userRepo.findAll();
         return modelMapper.map(userList,new TypeToken<List<UserDTO>>(){}.getType());
+    }
+
+
+    public List<UserDTO> findAllUsers() {
+        List<User> users = userRepo.findAll();
+        return users.stream()
+                .map(this::mapToUserDto)
+                .collect(Collectors.toList());
+    }
+
+    private UserDTO mapToUserDto(User user){
+        UserDTO userDto = new UserDTO();
+        String[] str = user.getName().split(" ");
+        userDto.setEmail(user.getEmail());
+        return userDto;
     }
 
 }

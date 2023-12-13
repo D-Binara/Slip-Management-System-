@@ -1,6 +1,6 @@
 function submitForm() {
-    var name = document.getElementById("name").value;
-    var amount = document.getElementById("amount").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
 
     // Send data to the backend
     fetch('/api/v1/user/saveUser', {
@@ -8,7 +8,7 @@ function submitForm() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: name,  fullAmount:amount})
+        body: JSON.stringify({email: email, password:password})
     })
         .then(response => response.json())
         .then(data => {
@@ -18,4 +18,29 @@ function submitForm() {
         .catch(error => {
             console.error('Error:', error);
         });
+
 }
+
+function submitFormSignIn() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    // Send data to the backend
+    fetch('/api/v1/user/saveUser', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: email, password:password})
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the backend
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+}
+

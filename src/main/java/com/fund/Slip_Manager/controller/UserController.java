@@ -5,7 +5,7 @@ import com.fund.Slip_Manager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;git git log
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "api/v1/user")
@@ -21,7 +21,7 @@ public class UserController {
 
     @PostMapping("/saveUser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO) {
-       return userService.saveUser(userDTO);
+        return userService.saveUser(userDTO);
     }
 
     @PutMapping("/updateUser")

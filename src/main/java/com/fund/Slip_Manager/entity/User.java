@@ -17,6 +17,6 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-    private String email;
-    private String password;
+    private String name;
+    private int fullAmount;
 }

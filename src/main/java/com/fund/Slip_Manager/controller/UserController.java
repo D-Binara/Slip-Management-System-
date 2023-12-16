@@ -19,12 +19,6 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
-
-
     @PostMapping("/saveUser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO) {
        return userService.saveUser(userDTO) ;

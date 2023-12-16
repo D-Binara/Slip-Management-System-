@@ -1,10 +1,10 @@
-function submitFormLogin() {
+function submitForm() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
     // Send data to the backend
-    fetch('/api/v1/user/getUsers', {
-        method: 'Get',
+    fetch('/api/v1/user/saveUser', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -21,10 +21,7 @@ function submitFormLogin() {
 
 }
 
-
-//Register Page
-function submitFormRegister() {
-    var name = document.getElementById("name").value;
+function submitFormSignIn() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
@@ -34,7 +31,7 @@ function submitFormRegister() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({name: name, email: email, password:password})
+        body: JSON.stringify({email: email, password:password})
     })
         .then(response => response.json())
         .then(data => {

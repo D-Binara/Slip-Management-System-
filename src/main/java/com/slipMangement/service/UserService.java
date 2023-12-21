@@ -1,6 +1,6 @@
-package com.becoder.service;
+package com.slipMangement.service;
 
-import com.becoder.entity.User;
+import com.slipMangement.entity.User;
 
 public interface UserService {
 

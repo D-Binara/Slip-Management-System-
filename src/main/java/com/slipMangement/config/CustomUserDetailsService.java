@@ -1,4 +1,4 @@
-package com.becoder.config;
+package com.slipMangement.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.becoder.entity.User;
-import com.becoder.repository.UserRepo;
+import com.slipMangement.entity.User;
+import com.slipMangement.repository.UserRepo;
 
 @Component
 public class CustomUserDetailsService implements UserDetailsService {

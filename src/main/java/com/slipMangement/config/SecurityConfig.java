@@ -1,4 +1,4 @@
-package com.becoder.config;
+package com.slipMangement.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -9,14 +9,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
 	@Autowired
-	public CustomAuthSucessHandler sucessHandler;
+	public CustomAuthSuccessHandler sucessHandler;
 	
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
@@ -39,14 +38,6 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
 	{
-		/*
-		 * http.csrf().disable()
-		 * .authorizeHttpRequests().requestMatchers("/","/register","/signin",
-		 * "/saveUser").permitAll() .requestMatchers("/user/**").authenticated().and()
-		 * .formLogin().loginPage("/signin").loginProcessingUrl("/userLogin")
-		 * //.usernameParameter("email")
-		 * .defaultSuccessUrl("/user/profile").permitAll();
-		 */
 		http.csrf().disable()
 		.authorizeHttpRequests().requestMatchers("/user/**").hasRole("USER")
 		.requestMatchers("/admin/**").hasRole("ADMIN")

@@ -1,4 +1,4 @@
-package com.becoder.controller;
+package com.slipMangement.controller;
 
 import java.security.Principal;
 
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.becoder.entity.User;
-import com.becoder.repository.UserRepo;
+import com.slipMangement.entity.User;
+import com.slipMangement.repository.UserRepo;
 
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/admin")
+public class AdminController {
 
 	@Autowired
 	private UserRepo userRepo;
@@ -26,12 +26,10 @@ public class UserController {
 			User user = userRepo.findByEmail(email);
 			m.addAttribute("user", user);
 		}
-
 	}
 
 	@GetMapping("/profile")
 	public String profile() {
-		return "profile";
+		return "admin_profile";
 	}
-
 }

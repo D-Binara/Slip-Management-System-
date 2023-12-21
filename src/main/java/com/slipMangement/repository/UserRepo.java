@@ -1,11 +1,11 @@
-package com.becoder.repository;
+package com.slipMangement.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.becoder.entity.User;
+import com.slipMangement.entity.User;
 
 public interface UserRepo extends JpaRepository<User, Integer> {
 
-	public User findByEmail(String emaill);
+	public User findByEmail(String email);
 
 }

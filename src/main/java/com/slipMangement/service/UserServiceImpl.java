@@ -1,4 +1,4 @@
-package com.becoder.service;
+package com.slipMangement.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.becoder.entity.User;
-import com.becoder.repository.UserRepo;
+import com.slipMangement.entity.User;
+import com.slipMangement.repository.UserRepo;
 
 import jakarta.servlet.http.HttpSession;
 

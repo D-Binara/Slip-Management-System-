@@ -1,4 +1,4 @@
-package com.becoder.entity;
+package com.slipMangement.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

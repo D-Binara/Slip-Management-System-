@@ -1,4 +1,4 @@
-package com.becoder.controller;
+package com.slipMangement.controller;
 
 import java.security.Principal;
 
@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.becoder.entity.User;
-import com.becoder.repository.UserRepo;
-import com.becoder.service.UserService;
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+import com.slipMangement.entity.User;
+import com.slipMangement.repository.UserRepo;
+import com.slipMangement.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -50,13 +49,6 @@ public class HomeController {
 		return "login";
 	}
 
-	/*
-	 * @GetMapping("/user/profile") public String profile(Principal p, Model m) {
-	 * String email = p.getName(); User user = userRepo.findByEmail(email);
-	 * m.addAttribute("user", user); return "profile"; }
-	 * 
-	 * @GetMapping("/user/home") public String home() { return "home"; }
-	 */
 
 	@PostMapping("/saveUser")
 	public String saveUser(@ModelAttribute User user, HttpSession session, Model m) {

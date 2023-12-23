@@ -9,40 +9,81 @@
 
 </head>
 <body class="bg-light">
-<section class="text-center">
+<section>
     <div style="background-color: #525557">
-        <h1 class="title">User Profile</h1>
+        <h1 class="title text-center">User Profile</h1>
     </div>
-    <div class="card-title"></div>
-    <div class="col-4"></div>
-    <div class="card-body text-center">
-        <table class="container table-bordered table-striped col-4">
-            <tr>
-                <th>
-                    <h4>Name: <p class="text-info"> [[${user.name}]] </p></h4>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <h4>Email:<p class="text-info"> [[${user.email}]]</p></h4>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <h4>Mob No:<p class="text-info"> [[${user.mobileNo}]]</p></h4>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <h4>Role: <p class="text-info">[[${user.role}]]</p></h4>
-                </th>
-            </tr>
-        </table>
-        <a href="/">
-            <button class="btn btn-primary mt-4"> Logout</button>
-        </a>
+
+    <div class="row">
+
+        <div class="col-1"></div>
+
+        <!-- first card-->
+        <div class="card-body col-4">
+            <table class="table">
+                <tr>
+                    <th>Full Amount</th>
+                    <th>[[${user.full_amount}]]</th>
+                </tr>
+                <tr>
+                    <th>Month</th>
+                    <th>Month</th>
+                </tr>
+            </table>
+
+            <div class="text-center">
+                <a href="/user/deposit">
+                    <button class="btn btn-primary mt-4">Deposit</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-2"></div>
+
+        <!-- second card-->
+        <div class="card-body col-4">
+            <table class="container table ">
+                <tr>
+                    <th>
+                        Name:
+                    </th>
+                    <th>[[${user.name}]]</th>
+                </tr>
+                <tr>
+                    <th>
+                        Email:
+                    </th>
+                    <th>
+                        [[${user.email}]]
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Mob No:
+                    </th>
+                    <th>
+                        [[${user.mobileNo}]]
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Role:
+                    </th>
+                    <th>
+                        [[${user.role}]]
+                    </th>
+                </tr>
+            </table>
+            <div class="text-center">
+                <a href="/">
+                    <button class="btn btn-primary mt-4"> Logout</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-1"></div>
+
     </div>
-    <div class="col-4"></div>
 </section>
 
 </body>

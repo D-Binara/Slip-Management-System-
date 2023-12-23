@@ -1,9 +1,8 @@
 package com.slipMangement.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class User {
@@ -21,6 +20,8 @@ public class User {
 	private String password;
 
 	private String role;
+
+	private int full_amount;
 
 	public int getId() {
 		return id;
@@ -70,9 +71,30 @@ public class User {
 		this.password = password;
 	}
 
+	public int getFull_amount() {
+		return full_amount;
+	}
+
+	public void setFull_amount(int full_amount) {
+		this.full_amount = full_amount;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", mobileNo=" + mobileNo + ", password=" + password + "]";
 	}
+
+
+	//Build relationship between User and Slips
+	@OneToMany(mappedBy = "user") // Refers to the "user" field in Slips entity
+	private List<Slips> slips; // List of slips associated with the user
+
+	public List<Slips> getSlips() {
+		return slips;
+	}
+	public void setSlips(List<Slips> slips) {
+		this.slips = slips;
+	}
+	//End of relationship part
 
 }

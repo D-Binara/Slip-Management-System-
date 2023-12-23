@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slip Management System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container mt-5 text-center col-4">
+    <div class="card-body border-3 border-black table-bordered">
+
+        <div class="card-header text-center card-title" style="font-size: 25px">Deposit Form</div>
+        <form class="text-center mt-2">
+
+            <label class="text-dark" style="font-weight: bold">Amount :</label>
+            <label>
+                <input type="number" class="form-control" placeholder="@Amount" id="total">
+            </label><br>
+
+            <label class="mt-2 card-subtitle text-dark" style="font-weight: bold">Months</label><br>
+
+            <!--checkboxes-->
+            <div class="text-center d-flex justify-content-center">
+                <div class="row col-6">
+                    <div class="form-check mx-1">
+                        <input class="form-check-input " type="checkbox" value="" id="january" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="january">
+                            January
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="february" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="february">
+                            February
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="march" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="march">
+                            March
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="april" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="april">
+                            April
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="may" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="may">
+                            May
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="june" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="june">
+                            June
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="july" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="july">
+                            July
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="august" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="august">
+                            August
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="september" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="september">
+                            September
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="october" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="october">
+                            October
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="november" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="november">
+                            November
+                        </label>
+                    </div>
+                    <div class="form-check mx-1">
+                        <input class="form-check-input" type="checkbox" value="" id="december" onclick="UpdateCost(this)">
+                        <label class="form-check-label" for="december">
+                            December
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <label class="mt-2 text-dark" style="font-weight: bold">Upload Your Slip</label><br>
+            <label>
+                <input type="file" class="form-control-sm">
+            </label><br>
+
+            <button class="btn btn-primary">Submit</button>
+
+
+        </form>
+    </div>
+</div>
+
+<script>
+    var total=0;
+    function UpdateCost(elem) {
+
+        if (elem.checked == true) {
+            total += 100;
+        }else{
+            total -=100;
+        }
+
+        document.getElementById('total').value = total.toFixed(0);
+    }
+</script>
+</body>
+</html>

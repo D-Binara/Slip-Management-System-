@@ -3,15 +3,16 @@ package com.slipMangement.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class Slips {
+public class Slip {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    private int amount;
 
     //Build relationship between User and Slips
-    @ManyToOne
+    /*@ManyToOne
     private User user;
 
     public User getUser() {
@@ -21,7 +22,7 @@ public class Slips {
     public void setUser(User user) {
         this.user = user;
     }
-    //End of relationship part
+    //End of relationship part*/
 
 
 }

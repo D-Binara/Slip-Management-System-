@@ -1,12 +1,15 @@
 package com.slipMangement.controller;
 
+import com.slipMangement.entity.Slip;
 import com.slipMangement.entity.User;
 import com.slipMangement.repository.UserRepo;
+import com.slipMangement.service.SlipServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
@@ -36,6 +39,18 @@ public class UserController {
     @GetMapping("/deposit")
     public String deposit() {
         return "deposit";
+    }
+
+    //slipUpload
+
+    @Autowired
+    private SlipServiceImpl slipService;
+
+    @PostMapping("/saveSlip")
+    public String saveSlip(@ModelAttribute Slip slips){
+
+        Slip s = slipService.saveSlip(slips);
+        return "redirect:/profile";
     }
 
 }

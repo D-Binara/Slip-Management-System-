@@ -56,7 +56,7 @@ public class HomeController {
 		User u = userService.saveUser(user);
 
 		if (u != null) {
-			// System.out.println("save sucess");
+			// System.out.println("save success");
 			session.setAttribute("msg", "Register successfully");
 
 		} else {
@@ -65,5 +65,6 @@ public class HomeController {
 		}
 		return "redirect:/register";
 	}
+
 
 }

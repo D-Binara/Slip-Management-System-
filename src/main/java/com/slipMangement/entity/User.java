@@ -1,8 +1,9 @@
 package com.slipMangement.entity;
 
-import jakarta.persistence.*;
-
-import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class User {
@@ -85,16 +86,16 @@ public class User {
 	}
 
 
-	//Build relationship between User and Slips
+	/*//Build relationship between User and Slips
 	@OneToMany(mappedBy = "user") // Refers to the "user" field in Slips entity
-	private List<Slips> slips; // List of slips associated with the user
+	private List<Slip> slips; // List of slips associated with the user
 
-	public List<Slips> getSlips() {
+	public List<Slip> getSlips() {
 		return slips;
 	}
-	public void setSlips(List<Slips> slips) {
+	public void setSlips(List<Slip> slips) {
 		this.slips = slips;
 	}
-	//End of relationship part
+	//End of relationship part*/
 
 }

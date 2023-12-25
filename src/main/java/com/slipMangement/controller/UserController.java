@@ -47,10 +47,10 @@ public class UserController {
     private SlipServiceImpl slipService;
 
     @PostMapping("/saveSlip")
-    public String saveSlip(@ModelAttribute Slip slips){
+    public String saveSlip(@ModelAttribute Slip slip){
 
-        Slip s = slipService.saveSlip(slips);
-        return "redirect:/profile";
+        Slip s = slipService.saveSlip(slip);
+        return "redirect:/user/profile";
     }
 
 }

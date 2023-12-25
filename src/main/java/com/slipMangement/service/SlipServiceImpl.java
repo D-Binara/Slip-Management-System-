@@ -15,6 +15,8 @@ public class SlipServiceImpl implements SlipService {
     public Slip saveSlip(Slip slip) {
 
         Slip newSlip =slipRepo.save(slip);
-        return null;
+
+        return newSlip;
     }
+
 }

@@ -11,8 +11,20 @@ public class Slip {
 
     private int amount;
 
-    //Build relationship between User and Slips
-    /*@ManyToOne
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+/*//Build relationship between User and Slips
+    @ManyToOne
     private User user;
 
     public User getUser() {
@@ -23,6 +35,9 @@ public class Slip {
         this.user = user;
     }
     //End of relationship part*/
+
+
+
 
 
 }

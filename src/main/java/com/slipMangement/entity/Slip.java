@@ -3,6 +3,7 @@ package com.slipMangement.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table (schema = "user")
 public class Slip {
 
     @Id
